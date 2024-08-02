@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from 'solid-js';
+import type { ParentProps } from 'solid-js';
 import html from 'solid-js/html';
 
 import { buildUrl, downloadBlob, isCrappyIE, isIOSSafari, isIOSChrome } from './utils';
@@ -14,7 +14,7 @@ interface Props {
 
 const isSupported = !isIOSChrome();
 
-export default function ICalLink(props: PropsWithChildren<Props>) {
+export default function ICalLink(props: ParentProps<Props>) {
 	const className = () => props.className || '';
 	const href = () => props.href || '#add-to-calendar';
 
