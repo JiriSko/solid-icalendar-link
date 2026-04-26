@@ -29,7 +29,7 @@ export default function ICalLink(props: ParentProps<Props>) {
 		const blob = new Blob([url], { type: 'text/calendar;charset=utf-8' });
 
 		if (isCrappyIE()) {
-			window.navigator.msSaveOrOpenBlob(blob, filename());
+			window.navigator.msSaveOrOpenBlob!(blob, filename());
 		} else if (isIOSSafari()) {
 			window.open(url, '_blank');
 		} else {
